@@ -1,4 +1,4 @@
-package gm;
+package zz;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,6 +7,7 @@ import java.util.Vector;
 import org.apache.commons.collections4.CollectionUtils;
 
 import com.opencsv.*;
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -23,7 +24,7 @@ public class App
         App myApp = new App();
     	
         System.out.println( "Hello World!" );
-        System.out.println("Je fais quelques modifications. Voilà !");
+        System.out.println("Je fais quelques modifications.");
         System.out.println("Max : " + myApp.max(4,5));
     
         int monmax = 0;
@@ -69,6 +70,6 @@ public class App
     
     public int max(int a, int b)
     {
-    	return a < b?b:a;
+    	return a > b?a:b;
     }
 }
