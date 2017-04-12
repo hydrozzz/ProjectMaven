@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Vector;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.Predicate;
 
 import com.opencsv.*;
 
@@ -40,7 +41,20 @@ public class App
                 	
     		    	List<String> list = Arrays.asList(entries);
     		    	Vector<String> out = new Vector<String>();
-    		    	CollectionUtils.select(list, new MonPredicat<String>(), out);
+    		    	CollectionUtils.select(list, new Predicate<String>(){
+
+						@Override
+						public boolean evaluate(String arg0) {
+							// TODO Auto-generated method stub
+							int tutu = Integer.parseInt(arg0);
+							if (tutu<50){
+								return true;
+							}
+							else return false;
+						}
+
+	
+    		    	}, out);
     		    	System.out.println("OUT:" + out);
     		    	
     		    	writer.writeNext(out.toArray(new String[0]));
@@ -70,6 +84,6 @@ public class App
     
     public int max(int a, int b)
     {
-    	return a > b?a:b;
+    	return a > b ? a : b;
     }
 }
